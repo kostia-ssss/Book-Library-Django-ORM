@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container">
+
+  <header class="hero">
+    <h1>Library Home</h1>
+    <p>Welcome to <strong>Library</strong></p>
+  </header>
+
+  <section class="stats">
+    <div class="card">
+      <h2>Browse</h2>
+      <a class="btn" href="{% url 'read' %}">All items</a>
+    </div>
+
+    <div class="card">
+      <h2>Add new</h2>
+      <a class="btn" href="{% url 'add' %}">Add item</a>
+    </div>
+
+    <div class="card">
+      <h2>Edit</h2>
+      <a class="btn" href="{% url 'edit' %}">Edit item</a>
+    </div>
+  </section>
+
+</div>
+{% endblock %}

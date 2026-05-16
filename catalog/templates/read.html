@@ -1,0 +1,83 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Local Library</h1>
+    <p>Welcome to <em>Library</em> dashboard</p>
+    <a class="btn" href="{% url 'index' %}">Home</a>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="card">
+      <h3>Books</h3>
+      <p>{{ books|length }}</p>
+    </div>
+
+    <div class="card">
+      <h3>Loans</h3>
+      <p>{{ loans|length }}</p>
+    </div>
+
+    <div class="card">
+      <h3>Authors</h3>
+      <p>{{ authors|length }}</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="card">
+      <h3>Readers</h3>
+      <p>{{ readers|length }}</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- BOOKS -->
+  <h2 id="books">Books</h2>
+  <div class="add">
+    <ul>
+      {% for book in books %}
+        <li>{{ book.name }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- LOANS -->
+  <h2 id="loans">Loans</h2>
+  <div class="add">
+    <ul>
+      {% for l in loans %}
+        <li>{{ l }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- AUTHORS -->
+  <h2 id="authors">Authors</h2>
+  <div class="add">
+    <ul>
+      {% for author in authors %}
+        <li>{{ author.first_name }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- READERS -->
+  <h2 id="readers">Readers</h2>
+  <div class="add">
+    <ul>
+      {% for reader in readers %}
+        <li>{{ reader.first_name }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+</div>
+
+{% endblock %}
